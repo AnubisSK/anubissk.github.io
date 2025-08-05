@@ -1,404 +1,156 @@
-<html>
- <head>
-  <title>
-   ANUBISSVK
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <style>
-   body {
-            background-color: #1a1a1a;
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #1a1a1a;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        .navbar a.active {
-            color: red;
-        }
-        .navbar .discord {
-            background-color: #5865F2;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 50px 20px;
-        }
-        .header img {
-            width: 200px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        .header-content {
-            text-align: left;
-        }
-        .header-content h1 {
-            color: red;
-            font-size: 48px;
-            margin: 20px 0;
-        }
-        .header-content p {
-            font-size: 24px;
-        }
-        .header-content p span {
-            color: rgb(98, 98, 214);
-        }
-        .header-content p span.green {
-            color: green;
-        }
-        .header-content button {
-            background-color: #333;
-            color: white;
-            border: 2px solid red;
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .projects {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .projects h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .projects h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background-color: red;
-            margin: 10px auto;
-        }
-        .project-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .project-item {
-            background-color: #333;
-            border: 2px solid red;
-            border-radius: 10px;
-            margin: 20px;
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-        }
-        .project-item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .project-item h3 {
-            color: red;
-            font-size: 24px;
-            margin: 20px 0 10px;
-        }
-        .project-item p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .project-item button {
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .contact {
-            text-align: center;
-            padding: 50px 20px;
-            border: 2px solid red;
-            border-radius: 10px;
-            margin: 20px;
-        }
-        .contact h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .contact h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background-color: red;
-            margin: 10px auto;
-        }
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .contact form label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        .contact form input,
-        .contact form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .contact form button {
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            border: 2px solid red;
-        }
-        .footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-        .social-bar {
-            margin: 20px 0;
-        }
-        .social-bar a {
-            color: white;
-            margin: 0 10px;
-            font-size: 24px;
-            text-decoration: none;
-        }
-        .more-projects {
-            margin-top: 20px;
-        }
-        .more-projects button {
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .navbar .nav-links {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
-            .navbar .nav-links a {
-                margin: 10px 0;
-            }
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-            .header img {
-                margin: 0 0 20px 0;
-            }
-            .header-content {
-                text-align: center;
-            }
-            .header-content h1 {
-                font-size: 36px;
-            }
-            .header-content p {
-                font-size: 18px;
-            }
-            .header-content button {
-                padding: 10px 20px;
-                font-size: 16px;
-            }
-            .projects h2 {
-                font-size: 28px;
-            }
-            .project-item {
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
-  </style>
-
- </head>
- <body>
-  <div class="navbar">
-   <div class="logo">
-    <a href="#">
-     <i class="fas fa-home"></i> ANUBISSVK
-    </a>
-   </div>
-   <div class="nav-links">
-    <a class="active" href="#">
-     <i class="fas fa-home"></i> DOMOV
-    </a>
-    <a href="#projekty">
-     <i class="fas fa-project-diagram"></i> PROJEKTY
-    </a>
-    <a href="#kontakt">
-     <i class="fas fa-envelope"></i> KONTAKT
-    </a>
-   </div>
-   <div class="discord">
-    <a href="https://discord.gg/QKmT857w6U">
-     <i class="fab fa-discord"></i> DISCORD
-    </a>
-   </div>
-  </div>
-  <section>
-  <div class="header">
-   <img alt="Logo ANUBISSVK" height="200" src="./obrazky/logo.jpg" width="200"/>
-   <div class="header-content">
-    <h1>
-     <b>ANUBISSVK</b>
-    </h1>
-    <p>
-     Som
-     <span>
-      webový
-     </span>
-     a
-     <span class="green">
-      minecraft
-     </span>
-     <b>DEVELOPER</b>
-    </p>
-    <button onclick="scrollToContact()">
-        <b>AK CHCETE WEBSTRÁNKU, KONTAKTUJTE MA</b>
-    </button>
-   </div>
-  </div>
-</section>
-<section id="projekty">
-  <div class="projects" style="">
-   <h2>
-    Moje Projekty
-   </h2>
-   <div class="project-list">
-    <div class="project-item">
-     <img alt="Screenshot REDLINE ROLEPLAY project" height="200" src="./obrazky/redlinerp.png" width="300"/>
-     <h3>
-      REDLINE ROLEPLAY
-     </h3>
-     <p>
-      Web pre fivem server REDLINERP.eu
-     </p>
-     <button>
-      <a href="" style="color: white; text-decoration: none;">ODKAZ NA WEB</a>
-     </button>
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANUBISSVK</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#1a1a1a] text-white overflow-x-hidden">
+    <!-- Navbar -->
+    <div class="flex flex-col md:flex-row justify-between items-center p-5 bg-[#1a1a1a]">
+      <a href="#" class="text-white font-bold text-lg">
+        <i class="fas fa-home"></i> ANUBISSVK
+      </a>
+      <div class="flex flex-col md:flex-row items-center mt-3 md:mt-0">
+        <a href="#" class="text-red-600 font-bold mx-2">
+          <i class="fas fa-home"></i> DOMOV
+        </a>
+        <a href="#projekty" class="text-white font-bold mx-2">
+          <i class="fas fa-project-diagram"></i> PROJEKTY
+        </a>
+        <a href="#kontakt" class="text-white font-bold mx-2">
+          <i class="fas fa-envelope"></i> KONTAKT
+        </a>
+      </div>
+      <div class="bg-[#5865F2] px-4 py-2 rounded mt-3 md:mt-0">
+        <a href="https://discord.gg/QKmT857w6U" class="text-white">
+          <i class="fab fa-discord"></i> DISCORD
+        </a>
+      </div>
     </div>
-    <div class="project-item">
-     <img alt="Screenshot AnubisSVK project" height="200" src="./obrazky/anubissvkweb.png" width="300"/>
-     <h3>
-      REDLINE ROLEPLAY
-     </h3>
-     <p>
-      Web pre môj web
-     </p>
-     <button>
-        <a href="https://anubissk.github.io" style="color: white; text-decoration: none;">ODKAZ NA WEB</a>
-    </button>
-    </div>
-    <div class="project-item">
-     <img alt="Screenshot AnubisOS project" height="200" src="./obrazky/anubisos.png" width="300"/>
-     <h3>
-      ANUBISOS
-     </h3>
-     <p>
-      Web pre môj linux
-     </p>
-     <button>
-        <a href="https://anubissk.github.io/anubisos/" style="color: white; text-decoration: none;">ODKAZ NA WEB</a>
-     </button>
-    </div>
-   </div>
-   <div class="more-projects">
-    <button>
-     VIAC PROJEKTOV
-    </button>
-   </div>
-  </div>
-</section>
-<section id="kontakt">
-  <div class="contact" style="text-align: center;">
-   <h2 style="">
-    Kontakt
-   </h2>
-   <form action="mailto:weby.anubissvk@gmail.com" method="post" enctype="text/plain">
-    <label for="name">
-     Meno
-    </label>
-    <input id="name" name="name" type="text" required style=""/>
-    <label for="email">
-     Email
-    </label>
-    <input id="email" name="email" type="email" required/>
-    <label for="message">
-     Správa
-    </label>
-    <textarea id="message" name="message" rows="5" required>
-    </textarea>
-    <input type="submit" value="Poslať"></input>
-   </form>
-  </div>
-</section>
-  <div class="footer" style="">
-   <div class="social-bar">
-    <a href="https://github.com/AnubisSK/">
-     <i class="fab fa-github"></i>
-    </a>
-    <a href="https://youtube.com/anubissvk">
-     <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://www.instagram.com/anubissvk.jpg/">
-     <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://twitch.tv/anubissvk">
-     <i class="fab fa-twitch"></i>
-    </a>
-   </div>
-   <p style="">
-    &copy; 2024 ANUBISSVK. Všetky práva vyhradené.
-   </p>
-  </div>
 
-  <script>
+    <!-- Header -->
+    <section>
+      <div class="flex flex-col md:flex-row items-center justify-center p-10">
+        <img
+          src="./obrazky/logo.jpg"
+          alt="Logo ANUBISSVK"
+          class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-6"
+        />
+        <div class="text-center md:text-left">
+          <h1 class="text-red-600 text-4xl md:text-5xl font-bold my-4">ANUBISSVK</h1>
+          <p class="text-2xl">
+            Som <span class="text-blue-500">webový</span> a
+            <span class="text-green-500">minecraft</span>
+            <b>DEVELOPER</b>
+          </p>
+          <button
+            onclick="scrollToContact()"
+            class="mt-5 bg-[#333] text-white border-2 border-red-600 px-6 py-3 text-lg font-bold"
+          >
+            AK CHCETE WEBSTRÁNKU, KONTAKTUJTE MA
+          </button>
+        </div>
+      </div>
+    </section>
 
-    // Funkcia na presun na sekciu kontakt
+    <!-- Projekty -->
+    <section id="projekty">
+      <div class="text-center p-10">
+        <h2 class="text-3xl md:text-4xl mb-4 font-bold">Moje Projekty</h2>
+        <div class="w-24 h-1 bg-red-600 mx-auto mb-10"></div>
 
-    function scrollToContact() {
+        <div id="project-list" class="flex flex-wrap justify-center" hx-get="projects.json" hx-trigger="load" hx-target="#project-list" hx-swap="innerHTML">
+          <!-- Projekty sa načítajú sem (len 3 najnovšie) -->
+        </div>
 
+        <div class="mt-6">
+          <button 
+            class="bg-red-600 text-white px-6 py-2"
+            hx-get="projects.json"
+            hx-target="#project-list"
+            hx-swap="innerHTML"
+            hx-vals='{"all": true}'
+          >
+            VIAC PROJEKTOV
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt">
+      <div class="text-center p-10 border-2 border-red-600 rounded-lg m-4">
+        <h2 class="text-3xl md:text-4xl mb-4 font-bold">Kontakt</h2>
+        <div class="w-24 h-1 bg-red-600 mx-auto mb-8"></div>
+        <form
+          action="mailto:weby.anubissvk@gmail.com"
+          method="post"
+          enctype="text/plain"
+          class="max-w-2xl mx-auto text-left"
+        >
+          <label for="name" class="block mb-2 text-lg">Meno</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            class="w-full p-3 mb-6 rounded border border-gray-300 text-white"
+          />
+
+          <label for="email" class="block mb-2 text-lg">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            class="w-full p-3 mb-6 rounded border border-gray-300 text-white"
+          />
+
+          <label for="message" class="block mb-2 text-lg">Správa</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full p-3 mb-6 rounded border border-gray-300 text-white"
+          ></textarea>
+
+          <button type="submit" class="bg-red-600 text-white px-6 py-2">Poslať</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#333] text-white text-center p-6 border-t-2 border-red-600">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="https://github.com/AnubisSK/"><i class="fab fa-github text-2xl"></i></a>
+        <a href="https://youtube.com/anubissvk"><i class="fab fa-youtube text-2xl"></i></a>
+        <a href="https://www.instagram.com/anubissvk.jpg/"><i class="fab fa-instagram text-2xl"></i></a>
+        <a href="https://twitch.tv/anubissvk"><i class="fab fa-twitch text-2xl"></i></a>
+      </div>
+      <p class="text-sm">&copy; 2025 ANUBISSVK. Všetky práva vyhradené.</p>
+    </footer>
+
+    <script>
+      function scrollToContact() {
         document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
-
-    }
-
-</script>
- </body>
+      }
+    </script>
+  </body>
 </html>
