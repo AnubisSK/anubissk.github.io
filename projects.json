@@ -1,0 +1,20 @@
+<div class="bg-[#333] border-2 border-red-600 rounded-lg m-4 p-4 w-80 text-center">
+            <img src="./obrazky/anubisos.png" alt="ANUBISOS" class="rounded mb-4"/>
+            <h3 class="text-red-600 text-2xl font-bold mb-2">ANUBISOS</h3>
+            <p class="mb-4">Web pre môj linux</p>
+            <a href="https://anubissk.github.io/anubisos/" class="inline-block bg-red-600 text-white px-4 py-2">ODKAZ NA WEB</a>
+        </div>
+        
+        <div class="bg-[#333] border-2 border-red-600 rounded-lg m-4 p-4 w-80 text-center">
+            <img src="./obrazky/redlinerp.png" alt="REDLINE ROLEPLAY" class="rounded mb-4"/>
+            <h3 class="text-red-600 text-2xl font-bold mb-2">REDLINE ROLEPLAY</h3>
+            <p class="mb-4">Web pre fivem server REDLINERP.eu</p>
+            <a href="" class="inline-block bg-red-600 text-white px-4 py-2">ODKAZ NA WEB</a>
+        </div>
+        
+        <div class="bg-[#333] border-2 border-red-600 rounded-lg m-4 p-4 w-80 text-center">
+            <img src="./obrazky/anubissvkweb.png" alt="ANUBISSVK" class="rounded mb-4"/>
+            <h3 class="text-red-600 text-2xl font-bold mb-2">ANUBISSVK</h3>
+            <p class="mb-4">Web pre môj web</p>
+            <a href="https://anubissk.github.io" class="inline-block bg-red-600 text-white px-4 py-2">ODKAZ NA WEB</a>
+        </div>
